@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<input type="text" id="datepicker" />
+
+<link href="~/Content/bootstrap-datepicker.css" rel="stylesheet" />
+
+@section Scripts{
+    <script src="~/Scripts/bootstrap-datepicker.min.js"></script>
+    <script>
+        $("#datepicker").datepicker({
+            "format": "dd/mm/yyyy",
+            "defaultViewDate": "20/08/2021",
+            "beforeShowDay": function (date)
+            {
+                if (date.getMonth() == 7) { if (date.getDate() == 20) { return { classes: "active" } } }
+            }
+        })
+    </script>
+}
+
